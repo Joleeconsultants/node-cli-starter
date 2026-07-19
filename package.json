@@ -1,0 +1,26 @@
+{
+  "name": "@bytifi/cli",
+  "version": "0.1.0",
+  "description": "Official Bytifi CLI — encrypt and upload files from the terminal",
+  "type": "module",
+  "bin": {
+    "bytifi": "./bin/bytifi.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "upload": "node bin/bytifi.js upload"
+  },
+  "keywords": [
+    "bytifi",
+    "cli",
+    "encryption",
+    "upload"
+  ],
+  "license": "MIT"
+}
