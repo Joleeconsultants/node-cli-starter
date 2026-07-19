@@ -30,9 +30,19 @@ Create an API key in **Account → API** on bytifi.com.
 
 ```bash
 bytifi upload ./photo.png
+bytifi upload ./photo.png --api-key usk_your_api_key_here
 bytifi upload ./photo.png --expires 60 --json
 bytifi upload ./large.iso -q
 ```
+
+Without a global install:
+
+```bash
+npx bytifi upload ./photo.png --api-key usk_your_api_key_here
+npm exec bytifi -- upload ./photo.png --api-key usk_your_api_key_here
+```
+
+Note: with `npm exec`, put `--` before the file path so npm does not swallow `--api-key`.
 
 ### Options
 
