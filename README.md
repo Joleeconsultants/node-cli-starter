@@ -11,7 +11,7 @@ The original service-specific upload, encryption, API, environment, packaging, a
 - human-readable, quiet, and JSON output modes
 - errors on stderr with a non-zero exit code
 - a standalone Windows `.exe` build
-- GitHub Actions artifact and tagged-release automation
+- GitHub Actions build and artifact automation
 
 ## Try it
 
@@ -48,20 +48,17 @@ Test it on Windows:
 .\dist\node-cli-starter.exe greet Ada
 ```
 
-## GitHub Actions releases
+## GitHub Actions builds
 
-The `Build Windows executable` workflow supports both future development and releases:
+The `Build Windows executable` workflow supports future development without publishing anything automatically:
 
 - Open or update a pull request to verify that the source, tests, and Windows build all succeed.
 - Run it manually from the repository's **Actions** tab to build and download a workflow artifact.
-- Push a version tag such as `v0.1.0` to build the executable, retain it as an artifact, create a GitHub release, and attach the `.exe`. The workflow rejects a tag that does not match the version in `package.json`.
+- Builds on `master` also retain the executable as a downloadable workflow artifact.
 
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
+The workflow uses only GitHub-maintained Actions, has read-only repository permissions, and requires no custom secrets. It never creates a release or uploads a public release asset.
 
-The workflow uses only GitHub-maintained Actions and GitHub's bundled `gh` CLI. It needs the standard GitHub-provided `GITHUB_TOKEN`; no custom secret is required. Its permission is limited to writing release contents.
+When a future version is ready, download `node-cli-starter-windows-x64` from the completed workflow run, create the GitHub release manually, and upload the contained `.exe` yourself.
 
 Dependabot checks the workflow's GitHub Actions every Monday and groups available updates into one pull request. It is intentionally limited to the `github-actions` ecosystem and does not open npm dependency updates.
 
@@ -73,4 +70,4 @@ Before using the template for a new project:
 2. Replace the example `greet` command with the project's commands.
 3. Keep the version in `package.json` and `bin/cli.js` synchronized.
 4. Run `npm test` and `npm run build:win`, then smoke-test the generated executable.
-5. Tag the commit only after the version and executable name are correct.
+5. Create the release and upload the verified executable manually.

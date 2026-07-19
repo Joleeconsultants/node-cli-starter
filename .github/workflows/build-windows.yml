@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - 'v*'
 
 permissions:
   contents: read
@@ -35,15 +33,6 @@ jobs:
       - name: Test CLI
         run: npm test
 
-      - name: Verify release tag matches package version
-        if: startsWith(github.ref, 'refs/tags/')
-        shell: pwsh
-        run: |
-          $packageVersion = (Get-Content package.json | ConvertFrom-Json).version
-          if ($env:GITHUB_REF_NAME -ne "v$packageVersion") {
-            throw "Tag $env:GITHUB_REF_NAME does not match package version $packageVersion."
-          }
-
       - name: Build Windows executable
         run: npm run build:win
 
@@ -56,28 +45,3 @@ jobs:
           name: node-cli-starter-windows-x64
           path: dist/node-cli-starter.exe
           if-no-files-found: error
-
-
-  publish-release:
-    if: startsWith(github.ref, 'refs/tags/')
-    needs: build-windows
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - name: Download executable artifact
-        uses: actions/download-artifact@v8
-        with:
-          name: node-cli-starter-windows-x64
-          path: dist
-
-      - name: Publish tagged release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: >-
-          gh release create "$GITHUB_REF_NAME"
-          dist/node-cli-starter.exe
-          --repo "$GITHUB_REPOSITORY"
-          --verify-tag
-          --generate-notes
