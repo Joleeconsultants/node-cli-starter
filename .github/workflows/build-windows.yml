@@ -73,7 +73,11 @@ jobs:
           path: dist
 
       - name: Publish tagged release
-        uses: softprops/action-gh-release@v3
-        with:
-          files: dist/node-cli-starter.exe
-          generate_release_notes: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          dist/node-cli-starter.exe
+          --repo "$GITHUB_REPOSITORY"
+          --verify-tag
+          --generate-notes

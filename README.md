@@ -61,7 +61,7 @@ git tag v0.1.0
 git push origin v0.1.0
 ```
 
-The workflow needs the standard GitHub-provided `GITHUB_TOKEN`; no custom secret is required. Its permission is limited to writing release contents.
+The workflow uses only GitHub-maintained Actions and GitHub's bundled `gh` CLI. It needs the standard GitHub-provided `GITHUB_TOKEN`; no custom secret is required. Its permission is limited to writing release contents.
 
 Dependabot checks the workflow's GitHub Actions every Monday and groups available updates into one pull request. It is intentionally limited to the `github-actions` ecosystem and does not open npm dependency updates.
 
