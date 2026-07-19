@@ -7,7 +7,7 @@ Installers:
   - Architecture: x64
     InstallerType: portable
     InstallerUrl: https://github.com/jpwcguy/Bytifi/releases/download/v0.1.1/bytifi.exe
-    InstallerSha256: 0019DFC4B32D63C1392AA264AED2253C1E0C2FB09216F8E2CC269BBFB8BB49B5
+    InstallerSha256: 106963FA3745417B9E93BCF8E1F4FF6B86A0E52C97EE3EFE772601856F5A45C9
     Commands:
       - bytifi
 ManifestType: installer
