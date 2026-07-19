@@ -1,5 +1,5 @@
 {
-  "name": "@bytifi/cli",
+  "name": "bytifi",
   "version": "0.1.0",
   "description": "Official Bytifi CLI — encrypt and upload files from the terminal",
   "type": "module",

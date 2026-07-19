@@ -5,7 +5,7 @@ Official command-line tool for encrypting and uploading files to [Bytifi](https:
 ## Install
 
 ```bash
-npm install -g @bytifi/cli
+npm install -g bytifi
 ```
 
 Requires **Node.js 18+**.
