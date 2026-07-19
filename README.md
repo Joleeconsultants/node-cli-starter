@@ -1,6 +1,6 @@
-# Node CLI starter
+# node-cli-starter
 
-A small, dependency-free command-line application kept as a starting point for a future project.
+A minimal, dependency-free Node.js command-line starter kept as a foundation for future projects.
 
 The original service-specific upload, encryption, API, environment, packaging, and release code has been removed. What remains demonstrates the reusable CLI structure:
 
@@ -17,9 +17,9 @@ Requires Node.js 18 or newer.
 
 ```bash
 npm link
-cli-starter --help
-cli-starter greet Ada
-cli-starter greet Ada --json
+node-cli-starter --help
+node-cli-starter greet Ada
+node-cli-starter greet Ada --json
 ```
 
 You can also run it without linking:
@@ -30,4 +30,4 @@ node bin/cli.js greet Ada
 
 ## Adapt it
 
-Rename `cli-starter` in `package.json` and `bin/cli.js`, then replace the example `greet` command with commands for the future project.
+Rename `node-cli-starter` in `package.json` and `bin/cli.js`, then replace the example `greet` command with commands for the future project.

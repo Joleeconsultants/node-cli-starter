@@ -3,7 +3,7 @@
 import process from 'node:process'
 
 const metadata = {
-  name: 'cli-starter',
+  name: 'node-cli-starter',
   version: '0.1.0',
 }
 
@@ -11,7 +11,7 @@ function printHelp() {
   process.stdout.write(`${metadata.name} — a minimal Node.js CLI starter
 
 Usage:
-  cli-starter greet [name] [options]
+  node-cli-starter greet [name] [options]
 
 Options:
       --json     Print machine-readable JSON
@@ -20,9 +20,9 @@ Options:
   -h, --help     Show this help
 
 Examples:
-  cli-starter greet
-  cli-starter greet Ada
-  cli-starter greet Ada --json
+  node-cli-starter greet
+  node-cli-starter greet Ada
+  node-cli-starter greet Ada --json
 `)
 }
 
@@ -74,7 +74,7 @@ function main() {
     return
   }
 
-  if (positional.length > 1) throw new Error('Usage: cli-starter greet [name]')
+  if (positional.length > 1) throw new Error('Usage: node-cli-starter greet [name]')
   runGreet(positional[0], options)
 }
 
