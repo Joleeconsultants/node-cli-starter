@@ -62,6 +62,8 @@ When a future version is ready, download `node-cli-starter-windows-x64` from the
 
 Dependabot checks the workflow's GitHub Actions every Monday and groups available updates into one pull request. It is intentionally limited to the `github-actions` ecosystem and does not open npm dependency updates.
 
+See [ROADMAP.md](ROADMAP.md) for the planned Linux, container, and optional self-hosted runner testing stages.
+
 ## Adapt it
 
 Before using the template for a new project:
