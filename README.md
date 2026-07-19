@@ -54,7 +54,7 @@ The `Build Windows executable` workflow supports both future development and rel
 
 - Open or update a pull request to verify that the source, tests, and Windows build all succeed.
 - Run it manually from the repository's **Actions** tab to build and download a workflow artifact.
-- Push a version tag such as `v0.1.0` to build the executable, retain it as an artifact, create a GitHub release, and attach the `.exe`.
+- Push a version tag such as `v0.1.0` to build the executable, retain it as an artifact, create a GitHub release, and attach the `.exe`. The workflow rejects a tag that does not match the version in `package.json`.
 
 ```bash
 git tag v0.1.0
