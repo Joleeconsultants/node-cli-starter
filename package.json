@@ -15,7 +15,8 @@
   },
   "scripts": {
     "upload": "node bin/bytifi.js upload",
-    "build:win": "pkg bin/bytifi.js --targets node22-win-x64 --output dist/bytifi.exe --compress GZip"
+    "build:bundle": "esbuild bin/bytifi.js --bundle --platform=node --format=cjs --outfile=dist/bytifi-bundle.cjs",
+    "build:win": "npm run build:bundle && pkg dist/bytifi-bundle.cjs --targets node22-win-x64 --output dist/bytifi.exe --compress GZip"
   },
   "repository": {
     "type": "git",
@@ -37,11 +38,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@yao-pkg/pkg": "^6.21.0"
-  },
-  "pkg": {
-    "assets": [
-      "lib/**/*.js"
-    ]
+    "@yao-pkg/pkg": "^6.21.0",
+    "esbuild": "^0.25.0"
   }
 }

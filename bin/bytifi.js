@@ -3,10 +3,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
-import { fileURLToPath } from 'node:url'
 import { BytifiApiError, BytifiNetworkError, uploadFile } from '../lib/upload.js'
-
-const __filename = fileURLToPath(import.meta.url)
 
 function printHelp() {
   process.stdout.write(`Bytifi CLI — encrypt and upload files
