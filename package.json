@@ -1,44 +1,26 @@
 {
-  "name": "bytifi",
-  "version": "0.1.1",
-  "description": "Official Bytifi CLI — encrypt and upload files from the terminal",
+  "name": "cli-starter",
+  "version": "0.1.0",
+  "description": "A minimal, dependency-free Node.js CLI starter",
   "type": "module",
   "bin": {
-    "bytifi": "./bin/bytifi.js"
+    "cli-starter": "./bin/cli.js"
   },
   "files": [
-    "bin",
-    "lib"
+    "bin"
   ],
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "upload": "node bin/bytifi.js upload",
-    "build:bundle": "esbuild bin/bytifi.js --bundle --platform=node --format=cjs --outfile=dist/bytifi-bundle.cjs",
-    "build:win": "npm run build:bundle && pkg dist/bytifi-bundle.cjs --targets node22-win-x64 --output dist/bytifi.exe --compress GZip"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jpwcguy/Bytifi.git"
-  },
-  "homepage": "https://bytifi.com",
-  "bugs": {
-    "url": "https://github.com/jpwcguy/Bytifi/issues"
-  },
-  "publishConfig": {
-    "access": "public"
+    "start": "node bin/cli.js",
+    "check": "node --check bin/cli.js",
+    "test": "node bin/cli.js greet Codex --json"
   },
   "keywords": [
-    "bytifi",
     "cli",
-    "encryption",
-    "upload",
-    "file-sharing"
+    "starter",
+    "node"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "@yao-pkg/pkg": "^6.21.0",
-    "esbuild": "^0.25.0"
-  }
+  "license": "MIT"
 }
