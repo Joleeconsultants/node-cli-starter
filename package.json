@@ -14,7 +14,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "upload": "node bin/bytifi.js upload"
+    "upload": "node bin/bytifi.js upload",
+    "build:win": "pkg bin/bytifi.js --targets node20-win-x64 --output dist/bytifi.exe --compress GZip"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,12 @@
     "file-sharing"
   ],
   "license": "MIT",
-  "dependencies": {
-    "bytifi": "^0.1.0"
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.21.0"
+  },
+  "pkg": {
+    "assets": [
+      "lib/**/*.js"
+    ]
   }
 }

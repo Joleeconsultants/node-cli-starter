@@ -4,19 +4,31 @@ Official command-line tool for encrypting and uploading files to [Bytifi](https:
 
 ## Install
 
+### npm (all platforms)
+
 ```bash
 npm install -g bytifi
 ```
 
 Requires **Node.js 18+**.
 
-Or install from source:
+Or from source:
 
 ```bash
 git clone https://github.com/jpwcguy/Bytifi.git
 cd Bytifi
 npm link
 ```
+
+### Windows (WinGet)
+
+Standalone `.exe` — no Node required (after WinGet package is published):
+
+```powershell
+winget install Bytifi.Bytifi
+```
+
+See [WINGET.md](WINGET.md) for release and submission steps.
 
 ## Setup
 
@@ -71,4 +83,4 @@ node bin/bytifi.js upload ./file.png --json
 
 ## Status
 
-WIP — v0.1.0 direct + multipart upload supported.
+WIP — v0.1.1 direct + multipart upload supported.

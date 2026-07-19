@@ -1,0 +1,14 @@
+PackageIdentifier: Bytifi.Bytifi
+PackageVersion: 0.1.1
+Platform:
+  - Windows.Desktop
+MinimumOSVersion: 10.0.17763.0
+Installers:
+  - Architecture: x64
+    InstallerType: portable
+    InstallerUrl: https://github.com/jpwcguy/Bytifi/releases/download/v0.1.1/bytifi.exe
+    InstallerSha256: 0019DFC4B32D63C1392AA264AED2253C1E0C2FB09216F8E2CC269BBFB8BB49B5
+    Commands:
+      - bytifi
+ManifestType: installer
+ManifestVersion: 1.6.0
