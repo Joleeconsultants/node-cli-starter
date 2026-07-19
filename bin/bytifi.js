@@ -126,7 +126,7 @@ async function runUpload(filePath, options) {
     onProgress: options.quiet || options.json
       ? undefined
       : (percent) => {
-          process.stderr.write(`Uploading encrypted parts: ${percent}%\n`)
+          process.stderr.write(`Encrypting and uploading: ${percent}%\n`)
         },
   })
 

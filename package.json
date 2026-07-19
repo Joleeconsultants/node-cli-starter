@@ -1,6 +1,6 @@
 {
   "name": "bytifi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official Bytifi CLI — encrypt and upload files from the terminal",
   "type": "module",
   "bin": {
@@ -34,5 +34,8 @@
     "upload",
     "file-sharing"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bytifi": "^0.1.0"
+  }
 }
