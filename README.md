@@ -1,86 +1,33 @@
-# Bytifi CLI
+# Node CLI starter
 
-Official command-line tool for encrypting and uploading files to [Bytifi](https://bytifi.com).
+A small, dependency-free command-line application kept as a starting point for a future project.
 
-## Install
+The original service-specific upload, encryption, API, environment, packaging, and release code has been removed. What remains demonstrates the reusable CLI structure:
 
-### npm (all platforms)
+- executable registration through `package.json`
+- command dispatch
+- positional arguments and flags
+- help and version output
+- human-readable, quiet, and JSON output modes
+- errors on stderr with a non-zero exit code
+
+## Try it
+
+Requires Node.js 18 or newer.
 
 ```bash
-npm install -g bytifi
-```
-
-Requires **Node.js 18+**.
-
-Or from source:
-
-```bash
-git clone https://github.com/jpwcguy/Bytifi.git
-cd Bytifi
 npm link
+cli-starter --help
+cli-starter greet Ada
+cli-starter greet Ada --json
 ```
 
-### Windows (WinGet)
-
-Standalone `.exe` — no Node required (after WinGet package is published):
-
-```powershell
-winget install Bytifi.Bytifi
-```
-
-See [WINGET.md](WINGET.md) for release and submission steps.
-
-## Setup
+You can also run it without linking:
 
 ```bash
-export BYTIFI_API_KEY=usk_your_api_key_here
+node bin/cli.js greet Ada
 ```
 
-Create an API key in **Account → API** on bytifi.com.
+## Adapt it
 
-## Usage
-
-```bash
-bytifi upload ./photo.png
-bytifi upload ./photo.png --api-key usk_your_api_key_here
-bytifi upload ./photo.png --expires 60 --json
-bytifi upload ./large.iso -q
-```
-
-Without a global install:
-
-```bash
-npx bytifi upload ./photo.png --api-key usk_your_api_key_here
-npm exec bytifi -- upload ./photo.png --api-key usk_your_api_key_here
-```
-
-Note: with `npm exec`, put `--` before the file path so npm does not swallow `--api-key`.
-
-### Options
-
-| Flag | Description |
-|------|-------------|
-| `-k, --api-key` | API key (default: `BYTIFI_API_KEY`) |
-| `-e, --expires` | Link lifetime in minutes: `5`, `15`, `30`, `60`, `120` |
-| `--delete-on-download` | Delete after first download |
-| `--json` | Machine-readable JSON output |
-| `-q, --quiet` | Print only the share URL |
-| `--mime-type` | Override MIME type detection |
-
-## How it works
-
-1. Encrypts the file locally with AES-GCM (same format as the website)
-2. Uploads encrypted bytes via the public API
-3. Prints a share URL including `#token=...`
-
-The server never receives plaintext or the decryption token.
-
-## Development
-
-```bash
-node bin/bytifi.js upload ./file.png --json
-```
-
-## Status
-
-WIP — v0.1.1 direct + multipart upload supported.
+Rename `cli-starter` in `package.json` and `bin/cli.js`, then replace the example `greet` command with commands for the future project.
