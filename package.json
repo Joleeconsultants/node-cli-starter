@@ -15,7 +15,7 @@
   },
   "scripts": {
     "upload": "node bin/bytifi.js upload",
-    "build:win": "pkg bin/bytifi.js --targets node20-win-x64 --output dist/bytifi.exe --compress GZip"
+    "build:win": "pkg bin/bytifi.js --targets node22-win-x64 --output dist/bytifi.exe --compress GZip"
   },
   "repository": {
     "type": "git",
