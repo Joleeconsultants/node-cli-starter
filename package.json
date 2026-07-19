@@ -16,11 +16,23 @@
   "scripts": {
     "upload": "node bin/bytifi.js upload"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpwcguy/Bytifi.git"
+  },
+  "homepage": "https://bytifi.com",
+  "bugs": {
+    "url": "https://github.com/jpwcguy/Bytifi/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "bytifi",
     "cli",
     "encryption",
-    "upload"
+    "upload",
+    "file-sharing"
   ],
   "license": "MIT"
 }
