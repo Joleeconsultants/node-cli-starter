@@ -1,10 +1,10 @@
 {
-  "name": "cli-starter",
+  "name": "node-cli-starter",
   "version": "0.1.0",
   "description": "A minimal, dependency-free Node.js CLI starter",
   "type": "module",
   "bin": {
-    "cli-starter": "./bin/cli.js"
+    "node-cli-starter": "./bin/cli.js"
   },
   "files": [
     "bin"
@@ -15,12 +15,18 @@
   "scripts": {
     "start": "node bin/cli.js",
     "check": "node --check bin/cli.js",
-    "test": "node bin/cli.js greet Codex --json"
+    "test": "node bin/cli.js greet Codex --json",
+    "build:bundle": "esbuild bin/cli.js --bundle --platform=node --format=cjs --outfile=dist/node-cli-starter.cjs",
+    "build:win": "npm run build:bundle && pkg dist/node-cli-starter.cjs --targets node22-win-x64 --output dist/node-cli-starter.exe --compress GZip"
   },
   "keywords": [
     "cli",
     "starter",
     "node"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.21.0",
+    "esbuild": "^0.28.1"
+  }
 }
